@@ -8,3 +8,8 @@ https://maker.pro/arduino/tutorial/how-to-control-leds-with-arduino-ir-sensor-an
 
 how to set up led blink
 https://www.arduino.cc/en/tutorial/blink
+
+Serial communication
+https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/
+
+
