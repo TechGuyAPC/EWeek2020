@@ -1,6 +1,9 @@
 //Pin IRSensor Output is attached to
 const int senseIRPin = 5;
 
+int irValue1 = 49;
+int IRValue2 = 9;
+
 //used to hold pulse widths
 unsigned long duration; //PulseIn function outputs unsigned long
 double duration_ms;
@@ -9,7 +12,8 @@ double duration_ms;
 void setup() {
   // make the IR Sensor pin an input
   pinMode(senseIRPin, INPUT);
-
+  // set the LED pin
+  pinMode(LED_BUILTIN, OUTPUT);
   // Start Serial monitor
   Serial.begin(9600);
 }
@@ -23,4 +27,14 @@ void loop() {
 
   //output to serial montior
   Serial.println(duration_ms);
+}
+
+//read the IR sensor data
+void loop(){
+  if(Serial.readString(senseIRPin) == irValue1)
+      digitalWrite(LED_BUILTIN, HIGH);
+      delay(1000);
+  else
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(1000);
 }
